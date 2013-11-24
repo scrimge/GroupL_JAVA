@@ -17,6 +17,7 @@ public class Client {
 
     public Client() {
         this.heartBeat = 0;
+        
 
     }
 
