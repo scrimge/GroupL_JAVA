@@ -23,6 +23,9 @@ public class Client {
 
     public int getHeartBeat() {
         return heartBeat;
+        
+        
+        
     }
 
     public void setHeartBeat(int heartBeat) {
