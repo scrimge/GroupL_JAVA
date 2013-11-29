@@ -14,19 +14,62 @@ import java.util.Random;
 public class Client {
 
     private int heartBeat;
+    private int lowLimit;
+    private int highLimit;
+    private boolean alarmFlag;
+
+    public Client(int lowLimit,int highLimit) {
+        this.heartBeat = 0;
+        this.lowLimit = lowLimit;
+        this.highLimit = highLimit;
+        this.alarmFlag = false;
+
+    }
 
     public Client() {
         this.heartBeat = 0;
-        
-
+        this.lowLimit = 0;
+        this.highLimit = 0;
+        this.alarmFlag = false;
     }
+
+   
+    
+    
+    
 
     public int getHeartBeat() {
         return heartBeat;
-        
-        
-        
+
     }
+
+    public int getLowLimit() {
+        return lowLimit;
+    }
+
+    public void setLowLimit(int lowLimit) {
+        this.lowLimit = lowLimit;
+    }
+
+    public int getHighLimit() {
+        return highLimit;
+    }
+
+    public void setHighLimit(int highLimit) {
+        this.highLimit = highLimit;
+    }
+
+    public boolean isAlarmFlag() {
+        return alarmFlag;
+    }
+
+    public void setAlarmFlag(boolean alarmFlag) {
+        this.alarmFlag = alarmFlag;
+    }
+    
+    
+    
+    
 
     public void setHeartBeat(int heartBeat) {
         this.heartBeat = heartBeat;
@@ -49,13 +92,17 @@ public class Client {
             System.out.println(randomInt);
         }
         setHeartBeat(output);
+        
+        
+        if(output > highLimit || output < lowLimit){
+            alarmFlag = true;
+            
+        }
 
     }
     
     
-    public void generateAlarm(){
-        
-    }
+    
 
     @Override
     public String toString() {

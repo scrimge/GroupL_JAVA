@@ -19,16 +19,22 @@ public class Test_client {
     
    public static void main(String[] args) {
        
-       Client c1 = new Client();
+       
+       //Client(int lowLimit,int highLimit)
+       Client c1 = new Client(160,178);
        for (int i = 0; i < 12; i++) {
            //generateHeartBeat(int Average, int range)
            c1.generateHeartBeat(170, 10);
            System.out.println(c1.toString());
+           System.out.println(c1.isAlarmFlag());
            try {
-               sleep(5000);
+               sleep(0);
            } catch (InterruptedException ex) {
                Logger.getLogger(Test_client.class.getName()).log(Level.SEVERE, null, ex);
            }
+           
+        
+           
        }
        
    } 
